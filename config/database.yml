@@ -80,6 +80,5 @@ test:
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  database: medic_api_production
-  username: medic_api
+  database: medic-api
   password: <%= ENV["MEDIC_API_DATABASE_PASSWORD"] %>
