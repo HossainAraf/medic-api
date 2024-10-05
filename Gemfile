@@ -6,7 +6,7 @@ ruby "3.3.0"
 gem "rails", "~> 7.1.4"
 
 # Specify api-only app
-gem "rails-api"
+# gem "rails-api"
 
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"

@@ -162,9 +162,6 @@ GEM
       activesupport (= 7.1.4)
       bundler (>= 1.15.0)
       railties (= 7.1.4)
-    rails-api (0.4.1)
-      actionpack (>= 3.2.11)
-      railties (>= 3.2.11)
     rails-dom-testing (2.2.0)
       activesupport (>= 5.0.0)
       minitest
@@ -211,7 +208,6 @@ DEPENDENCIES
   puma (>= 5.0)
   rack-cors
   rails (~> 7.1.4)
-  rails-api
   tzinfo-data
 
 RUBY VERSION
