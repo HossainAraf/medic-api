@@ -79,7 +79,7 @@ test:
 #
 production:
   <<: *default
-   url: <%= ENV["DATABASE_URL"] %>
+  url: <%= ENV["DATABASE_URL"] %>
   database: medic_api_production
   username: medic_api
   password: <%= ENV["MEDIC_API_DATABASE_PASSWORD"] %>
