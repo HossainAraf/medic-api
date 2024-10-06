@@ -74,5 +74,5 @@ default: &default
 production:
   <<: *default
   url: <%= ENV["DATABASE_URL"] %>
-  database: postgres_wjjk
+  database: medic-api
   password: <%= ENV["MEDIC_API_DATABASE_PASSWORD"] %>
