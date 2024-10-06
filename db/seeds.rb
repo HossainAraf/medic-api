@@ -2,6 +2,8 @@
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
+# bin/rails db:seed
+
 # Example:
 #
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
@@ -9,5 +11,5 @@
 #   end
 
 Specification.create(
-  name: "ABC"
+  name: "ZXY"
 )
