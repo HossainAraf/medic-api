@@ -15,6 +15,5 @@ test:
 
 production:
   <<: *default
+  database: <%= ENV['DATABASE_URL'].present? ? nil : 'medic-api' %>
   url: <%= ENV["DATABASE_URL"] %>
-  database: medic-api
-  password: <%= ENV["MEDIC_API_DATABASE_PASSWORD"] %>
