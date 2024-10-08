@@ -11,3 +11,4 @@ bundle install
 # Uncomment the following line:
 
 bundle exec rails db:migrate
+bin/rails db:migrate

@@ -11,5 +11,5 @@
 #   end
 
 Specification.create(
-  name: "ZXY"
+  name: "XYz"
 )
