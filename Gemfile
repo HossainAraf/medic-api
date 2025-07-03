@@ -5,9 +5,6 @@ ruby "3.3.0"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.4"
 
-# Specify api-only app
-# gem "rails-api"
-
 # Use postgresql as the database for Active Record
 gem "pg", "~> 1.1"
 
@@ -48,3 +45,7 @@ group :development do
   # gem "spring"
 end
 
+group :development, :test do
+  gem 'rubocop', require: false
+  gem 'rubocop-rails', require: false
+end
