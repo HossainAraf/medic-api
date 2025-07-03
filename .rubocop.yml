@@ -58,5 +58,8 @@ Style/HashEachMethods:
   Enabled: false
 Style/HashTransformKeys:
   Enabled: false
-Style/HashTransformValues:
-  Enabled: false
+# Style/HashTransformValues:
+#   Enabled: false
+
+Rails:
+  Enabled: true

@@ -10,24 +10,21 @@ jobs:
     name: Rubocop
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: 3.2.2
-      - name: Setup Rubocop
-        run: |
-          gem install --no-document rubocop -v '>= 1.0, < 2.0' # https://docs.rubocop.org/en/stable/installation/
-          [ -f .rubocop.yml ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/ror/.rubocop.yml
-      - name: Rubocop Report
-        run: rubocop --color
-      - name: Rubocop Autocorrect
-        run: rubocop --color -a || true
-        continue-on-error: true
-      - name: Rubocop Report (after autocorrect)
-        run: rubocop --color || true
-        continue-on-error: true
-      - name: Upload Rubocop Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: rubocop-report  
-        
+      - name: Install dependencies
+  run: bundle install
+
+- name: Run Rubocop
+  run: bundle exec rubocop --color
+
+- name: Rubocop Autocorrect
+  run: bundle exec rubocop --color -a || true
+  continue-on-error: true
+
+- name: Rubocop Report (after autocorrect)
+  run: bundle exec rubocop --color || true
+  continue-on-error: true
+
+- name: Upload Rubocop Report
+  uses: actions/upload-artifact@v4
+  with:
+    name: rubocop-report
