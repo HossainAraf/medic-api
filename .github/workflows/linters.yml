@@ -1,6 +1,7 @@
 name: Linters
 
-on: pull_request
+on:
+  pull_request:
 
 env:
   FORCE_COLOR: 1
@@ -10,21 +11,27 @@ jobs:
     name: Rubocop
     runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v3
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.2.2
+
       - name: Install dependencies
-  run: bundle install
+        run: bundle install
 
-- name: Run Rubocop
-  run: bundle exec rubocop --color
+      - name: Run Rubocop
+        run: bundle exec rubocop --color
 
-- name: Rubocop Autocorrect
-  run: bundle exec rubocop --color -a || true
-  continue-on-error: true
+      - name: Rubocop Autocorrect
+        run: bundle exec rubocop --color -a || true
+        continue-on-error: true
 
-- name: Rubocop Report (after autocorrect)
-  run: bundle exec rubocop --color || true
-  continue-on-error: true
+      - name: Rubocop Report (after autocorrect)
+        run: bundle exec rubocop --color || true
+        continue-on-error: true
 
-- name: Upload Rubocop Report
-  uses: actions/upload-artifact@v4
-  with:
-    name: rubocop-report
+      - name: Upload Rubocop Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: rubocop-report
