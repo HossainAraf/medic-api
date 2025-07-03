@@ -30,8 +30,3 @@ jobs:
       - name: Rubocop Report (after autocorrect)
         run: bundle exec rubocop --color || true
         continue-on-error: true
-
-      - name: Upload Rubocop Report
-        uses: actions/upload-artifact@v4
-        with:
-          name: rubocop-report
