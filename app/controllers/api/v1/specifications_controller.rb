@@ -1,5 +1,4 @@
 class Api::V1::SpecificationsController < ApplicationController
-  
   def index
     specifications = Specification.all
     render json: specifications
@@ -25,5 +24,4 @@ class Api::V1::SpecificationsController < ApplicationController
   def specification_params
     params.require(:specification).permit(:name)
   end
-
 end
