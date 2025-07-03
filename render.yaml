@@ -1,6 +1,6 @@
 # Exported from Render on 2024-10-06T15:18:47Z
 databases:
-- name: medic-api
+- name: my-api
   databaseName: postgres_wjjk
   user: postgres_wjjk_user
   plan: free
@@ -19,7 +19,7 @@ services:
     sync: false
   - key: DATABASE_URL
     fromDatabase:
-      name: medic-api
+      name: my-api
       property: connectionString
   region: oregon
   buildCommand: ./bin/render-build.sh
